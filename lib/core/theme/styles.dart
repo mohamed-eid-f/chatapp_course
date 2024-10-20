@@ -1,4 +1,4 @@
-import 'package:chatapp_course/core/theme/color_app.dart';
+import 'package:chatapp_course/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 abstract class Styles {
@@ -8,7 +8,7 @@ abstract class Styles {
     fontWeight: FontWeight.w600,
   );
   static const TextStyle textStyle15 = TextStyle(
-    color: ColorApp.primaryColor,
+    color: AppColors.primaryColor,
     fontSize: 15,
     fontWeight: FontWeight.w600,
   );
