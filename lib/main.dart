@@ -1,3 +1,4 @@
+import 'package:chatapp_course/core/theme/app_theme.dart';
 import 'package:chatapp_course/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
@@ -12,10 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'Inter',
-      ),
+      theme: appThemeData,
       home: const SplashView(),
     );
   }

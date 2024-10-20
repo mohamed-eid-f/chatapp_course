@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:chatapp_course/core/constants/asset_images.dart';
 import 'package:chatapp_course/core/theme/styles.dart';
-import 'package:chatapp_course/features/home/presentation/views/home_view.dart';
+import 'package:chatapp_course/features/auth/presentation/views/login_view.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatelessWidget {
@@ -13,11 +13,12 @@ class SplashView extends StatelessWidget {
       if (context.mounted) {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (_) => const HomeView(),
+            builder: (_) => const LoginView(),
           ),
         );
       }
     });
+
     return Scaffold(
       body: Center(
         child: Column(
