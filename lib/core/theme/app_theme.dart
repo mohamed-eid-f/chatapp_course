@@ -5,7 +5,6 @@ var appThemeData = ThemeData(
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: const AppBarTheme(
     backgroundColor: Colors.white,
-    centerTitle: true,
   ),
   iconTheme: const IconThemeData(
     color: AppColors.fontColor,
@@ -40,22 +39,8 @@ var appThemeData = ThemeData(
     foregroundColor: AppColors.secondaryColor,
     backgroundColor: AppColors.primaryColor,
     elevation: 4,
-    shape: CircleBorder(),
-    iconSize: 32,
-  ),
-  chipTheme: const ChipThemeData(
-    selectedColor: AppColors.primaryColor,
-    disabledColor: Colors.grey,
-    labelStyle: TextStyle(
-      // color: AppColors.fontColor,
-      fontWeight: FontWeight.bold,
-    ),
-    showCheckmark: false,
-
-    // padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-    elevation: 0,
-    backgroundColor: AppColors.secondaryColor,
-    shape: StadiumBorder(side: BorderSide(color: Colors.transparent)),
+    // shape: CircleBorder(),
+    iconSize: 28,
   ),
   brightness: Brightness.light,
   fontFamily: 'Inter',
