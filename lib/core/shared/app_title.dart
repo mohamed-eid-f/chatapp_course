@@ -9,8 +9,10 @@ class AppTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 32.0),
+    return Container(
+      width: double.infinity,
+      // color: Colors.orange,
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Text(
         title,
         style: Theme.of(context).textTheme.bodyLarge,

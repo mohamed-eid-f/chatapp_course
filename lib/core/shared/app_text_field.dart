@@ -1,46 +1,49 @@
 import 'package:chatapp_course/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class AppPasswordField extends StatefulWidget {
-  final String label;
-  final String? initialValue;
+class AppTextField extends StatefulWidget {
+  final String? label;
   final IconData? prefixIcon;
+  final String? initialValue;
+  final TextInputType? textInputType;
   final void Function(String?)? onSaved;
+  final String? Function(String?)? validatorFunction;
 
-  const AppPasswordField({
+  const AppTextField({
     super.key,
-    required this.label,
+    this.label,
     this.onSaved,
-    this.initialValue,
     this.prefixIcon,
+    this.initialValue,
+    this.textInputType,
+    this.validatorFunction,
   });
 
   @override
-  State<AppPasswordField> createState() => _AppPasswordFieldState();
+  State<AppTextField> createState() => _AppTextFieldState();
 }
 
-class _AppPasswordFieldState extends State<AppPasswordField> {
+class _AppTextFieldState extends State<AppTextField> {
   bool visible = false;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: (value) {
-        if (value?.isEmpty ?? true) {
-          return "Field is required";
-        } else if (value!.length < 6) {
-          return "Password must be at least 6 characters long";
-        }
-        return null;
-      },
+      validator: widget.validatorFunction ??
+          (value) {
+            if (value == null || value.isEmpty) {
+              return "Field is required";
+            }
+            return null;
+          },
+      keyboardType: widget.textInputType,
       initialValue: widget.initialValue,
       onSaved: widget.onSaved,
-      obscureText: !visible,
       style: Theme.of(context).textTheme.bodyLarge,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.white,
         prefixIcon: widget.prefixIcon != null ? Icon(widget.prefixIcon) : null,
+        fillColor: Colors.white,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(24),
           borderSide: const BorderSide(color: Colors.grey, width: 2),
@@ -54,19 +57,6 @@ class _AppPasswordFieldState extends State<AppPasswordField> {
           borderSide: const BorderSide(color: AppColors.primaryColor, width: 2),
         ),
         labelText: widget.label,
-        suffixIcon: InkWell(
-          onTap: () {
-            setState(
-              () {
-                visible = !visible;
-              },
-            );
-          },
-          child: Icon(
-            visible ? Icons.visibility_off : Icons.visibility,
-            color: AppColors.primaryColor,
-          ),
-        ),
       ),
     );
   }

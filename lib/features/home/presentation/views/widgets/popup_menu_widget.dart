@@ -1,3 +1,4 @@
+import 'package:chatapp_course/features/profile/presentation/views/profile_view.dart';
 import 'package:flutter/material.dart';
 
 class PopupMenuWidget extends StatelessWidget {
@@ -25,7 +26,10 @@ class PopupMenuWidget extends StatelessWidget {
         if (value == 1) {
           // todo: Navigate to New Group Screen
         } else if (value == 2) {
-          // todo: Navigate to Profile Screen
+          // Navigate to Profile Screen
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (_) => const ProfileView(),
+          ));
         }
       },
     );

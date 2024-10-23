@@ -11,31 +11,33 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(
-              AssetImages.logo,
-              fit: BoxFit.contain,
-              height: 200,
-              width: 200,
-            ),
-            const Text("Log in to your account", style: Styles.textStyle24),
-            const SizedBox(
-              height: 80,
-            ),
-            const LoginForm(),
-            const SizedBox(height: 32.0),
-            AppCustomRichText(
-              text_1: "Don't have an account?",
-              text_2: " Register here",
-              onTap_2: () {
-                debugPrint("Register here");
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => const SignupView()));
-              },
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image.asset(
+                AssetImages.logo,
+                fit: BoxFit.contain,
+                height: 200,
+                width: 200,
+              ),
+              const Text("Log in to your account", style: Styles.textStyle24),
+              const SizedBox(
+                height: 80,
+              ),
+              const LoginForm(),
+              const SizedBox(height: 32.0),
+              AppCustomRichText(
+                text_1: "Don't have an account?",
+                text_2: " Register here",
+                onTap_2: () {
+                  debugPrint("Register here");
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (_) => const SignupView()));
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

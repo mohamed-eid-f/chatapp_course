@@ -1,4 +1,3 @@
-import 'package:chatapp_course/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ViewedStatusWidget extends StatelessWidget {
@@ -27,7 +26,7 @@ class ViewedStatusWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Marwan Ali",
+                "Mohammed Eid",
                 style: Theme.of(context).textTheme.displayMedium,
               ),
               const SizedBox(height: 12),

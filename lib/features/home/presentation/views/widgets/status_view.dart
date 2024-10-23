@@ -1,4 +1,4 @@
-import 'package:chatapp_course/features/home/presentation/views/widgets/app_title.dart';
+import 'package:chatapp_course/core/shared/app_title.dart';
 import 'package:chatapp_course/features/home/presentation/views/widgets/recent_status_widget.dart';
 import 'package:chatapp_course/features/home/presentation/views/widgets/user_status_widget.dart';
 import 'package:chatapp_course/features/home/presentation/views/widgets/viewed_status_widget.dart';
